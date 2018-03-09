@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Application
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Number number = new AppLication();
+            number.ADD();
+            foreach(var index in number.list)
+            {
+                Console.WriteLine($"f({index.Id.ToString()}) = {index.Now.ToString()}");
+            }
+            Console.ReadLine();
+        }
+    }
+}
