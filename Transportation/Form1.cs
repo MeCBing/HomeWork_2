@@ -57,24 +57,7 @@ namespace Transportation
         {
             if (open)
             {
-                List<string> list1 = new List<string>();
-                if (radioButton1.Checked)
-                {
-                    var data = listTest.Where((x) => x.StartState == comboBox1.SelectedItem.ToString());
-                    foreach (var d in data)
-                    {
-                        list1.Add(d.EndState);
-                    }
-                }
-                else
-                {
-                    var data = listTest.Where((x) => x.EndState == comboBox1.SelectedItem.ToString());
-                    foreach (var d in data)
-                    {
-                        list1.Add(d.StartState);
-                    }
-                }
-                comboBox2.DataSource = list1;
+                comboBox2.DataSource = Class2.SelectIndexChange(radioButton1.Checked,comboBox1.SelectedItem.ToString());
             }
         }
 

@@ -87,5 +87,28 @@ namespace Transportation
                 Price = v.Price;
             }
         }
+        public static List<string> SelectIndexChange(bool radio1,string combox1)
+        {
+            List<string> list1 = new List<string>();
+            TransportatiionModel context = new TransportatiionModel();
+            var listTest = context.TransportatiionTable.ToList();
+            if (radio1)
+            {
+                var data = listTest.Where((x) => x.StartState == combox1);
+                foreach (var d in data)
+                {
+                    list1.Add(d.EndState);
+                }
+            }
+            else
+            {
+                var data = listTest.Where((x) => x.EndState == combox1);
+                foreach (var d in data)
+                {
+                    list1.Add(d.StartState);
+                }
+            }
+            return list1;
+        }
     }
 }
