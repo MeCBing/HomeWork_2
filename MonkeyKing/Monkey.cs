@@ -52,10 +52,16 @@ namespace MonkeyKing
                         now = now + 1;
                     }
                 }
+                foreach (var index in list)
+                {
+                    Console.Write($" {index.ToString()} ");
+                }
+                Console.WriteLine();
                 if (list.Count == 1)
                 {
                     return list[0];
                 }
+                
             }
         }
     }
